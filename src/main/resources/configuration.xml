@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ourFirstBean" class="com.hit.domain.SongWriterImpl"></bean>
+	
+	<bean id="marysSong" class="com.hit.domain.Song">
+		<constructor-arg name="name" value="Mary's farm"></constructor-arg>
+		<constructor-arg name="lyrics" value="Mary has a little lamb, her fleece is white as snow"></constructor-arg>
+	</bean>
+	
+	<bean id="mary" class="com.hit.domain.SongWriterImpl">
+		<constructor-arg name="firstname" value="Mary"></constructor-arg>
+		<constructor-arg name="lastname" value="O'Shea"></constructor-arg>
+		<constructor-arg name="age" value="21"></constructor-arg>
+		<constructor-arg name="song" ref="marysSong"></constructor-arg>
+	</bean>
+	
+	<bean id="stage" class="com.hit.domain.Venue">
+		<constructor-arg name="name" value="Marquee"></constructor-arg>
+		<constructor-arg name="addressLine1" value="Docks"></constructor-arg>
+		<constructor-arg name="addressLine2" value="Cork"></constructor-arg>
+		<constructor-arg name="country" value="Ireland"></constructor-arg>
+		<constructor-arg name="capacity" value="20000"></constructor-arg>
+	</bean>
+
+</beans>
